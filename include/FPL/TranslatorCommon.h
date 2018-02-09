@@ -1,11 +1,11 @@
 #pragma once
 
-#include <KAI/Language/Common/ProcessCommon.h>
-#include <KAI/Language/Common/Structure.h>
+#include <FPL/ProcessCommon.h>
+#include <FPL/Structure.h>
 #include <KAI/Executor/Continuation.h>
 #include <KAI/Executor/Operation.h>
 
-KAI_BEGIN
+FPL_BEGIN
 
 /// Common to all systems that translate from a text stream to a Continuation
 struct TranslatorCommon : ProcessCommon
@@ -41,4 +41,4 @@ protected:
 	using ProcessCommon::_reg;
 };
 
-KAI_END
+FPL_END

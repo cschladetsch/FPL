@@ -1,8 +1,8 @@
 #pragma once
 
-#include <KAI/Core/Base.h>
+#include <FPL/Base.h>
 
-KAI_BEGIN
+FPL_BEGIN
 
 // A syntactic structure.
 enum class Structure
@@ -23,5 +23,5 @@ enum class Structure
 StringStream &operator<<(StringStream &S, const Structure& T);
 StringStream &operator>>(StringStream &S, Structure &T);
 
-KAI_END
+FPL_END
 

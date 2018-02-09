@@ -1,10 +1,10 @@
 #pragma once
 
-#include <KAI/Core/Value.h>
-#include <KAI/Core/Registry.h>
-#include <KAI/Language/Common/Process.h>
+#include <FPL/Value.h>
+//#include <FPL/Registry.h>
+#include <FPL/Process.h>
 
-KAI_BEGIN
+FPL_BEGIN
 
 struct ProcessCommon : Process
 {
@@ -27,4 +27,4 @@ protected:
 	Registry *_reg = 0;
 };
 
-KAI_END
+FPL_END

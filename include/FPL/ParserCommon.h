@@ -1,12 +1,12 @@
 #pragma once
 
-#include <KAI/Language/Common/ParserBase.h>
-#include <KAI/Language/Common/ProcessCommon.h>
-#include <KAI/Language/Common/Process.h>
-#include <KAI/Language/Common/AstNodeBase.h>
-#include <KAI/Language/Common/Structure.h>
+#include <FPL/ParserBase.h>
+#include <FPL/ProcessCommon.h>
+#include <FPL/Process.h>
+#include <FPL/AstNodeBase.h>
+#include <FPL/Structure.h>
 
-KAI_BEGIN
+FPL_BEGIN
 
 // common for all parsers.
 // iterate over a stream of tokens to produce an abstract syntax tree
@@ -122,7 +122,7 @@ protected:
 		if (stack.empty())
 		{
 			//MUST CreateError("Internal Error: Parse stack empty");
-			KAI_THROW_0(EmptyStack);
+			FPL_THROW_0(EmptyStack);
 		}
 
 		auto last = stack.back();
@@ -157,7 +157,7 @@ protected:
 		if (!Has())
 		{
 			Fail("Expected something");
-			KAI_THROW_1(LogicError, "Expected something");
+			FPL_THROW_1(LogicError, "Expected something");
 		}
 
 		return tokens[current];
@@ -231,7 +231,7 @@ protected:
 		if (tok.type != type)
 		{
 			Fail(Lexer::CreateErrorMessage(tok, "Expected %s, have %s", TokenEnumType::ToString(type), TokenEnumType::ToString(tok.type)));
-			//KAI_THROW_1(LogicError, "Unexpected token");
+			//FPL_THROW_1(LogicError, "Unexpected token");
 			return 0;
 		}
 
@@ -244,5 +244,5 @@ protected:
 	AstNodePtr NewNode(TokenNode const &t) { return std::make_shared<AstNode>(t); }
 };
 
-KAI_END
+FPL_END
 

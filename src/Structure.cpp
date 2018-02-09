@@ -1,3 +1,4 @@
+/*
 #include <KAI/Core/StringStream.h>
 #include <KAI/Language/Common/Structure.h>
 #include <KAI/Core/BuiltinTypes.h>
@@ -18,3 +19,7 @@ StringStream &operator>>(StringStream &S, Structure &T)
 }
 
 KAI_END
+*/
+
+#include <FPL/Base.h>
+

@@ -1,9 +1,9 @@
 #pragma once
 
-#include <KAI/Core/Config/Base.h>
+#include <FPL/Base.h>
 #include <string>
 
-KAI_BEGIN
+FPL_BEGIN
 
 /// Common to all language processes. A simple and humble class with faults
 /// but crucial to the overall system.
@@ -19,5 +19,5 @@ protected:
 	bool Fail(const std::string &) const;
 };
 
-KAI_END
+FPL_END
 

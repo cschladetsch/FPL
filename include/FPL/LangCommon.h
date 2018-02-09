@@ -1,14 +1,14 @@
 #pragma once
 
-#include <KAI/Core/Registry.h>
+#include <FPL/Registry.h>
 #include <KAI/Executor/Executor.h>
-#include <KAI/Language/Common/Base.h>
-#include <KAI/Language/Common/Process.h>
-#include <KAI/Language/Common/ParserCommon.h>
-#include <KAI/Language/Common/Process.h>
-#include <KAI/Language/Common/Structure.h>
+#include <FPL/Base.h>
+#include <FPL/Process.h>
+#include <FPL/ParserCommon.h>
+#include <FPL/Process.h>
+#include <FPL/Structure.h>
 
-KAI_BEGIN
+FPL_BEGIN
 
 // Common for all all languages, given the Translator Tr
 // which transforms raw text into a Continuation for an Executor
@@ -36,5 +36,5 @@ public:
 	virtual Pointer<Continuation> TranslateFile(const char *name, Structure st = Structure::Program) = 0;
 };
 
-KAI_END
+FPL_END
 

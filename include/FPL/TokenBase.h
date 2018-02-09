@@ -1,10 +1,10 @@
 #pragma once
 
-#include <KAI/Language/Common/LexerBase.h>
+#include <FPL/LexerBase.h>
 
 #include <sstream>
 
-KAI_BEGIN
+FPL_BEGIN
 
 // common to all Tokens
 template <class EEnumType>
@@ -61,5 +61,5 @@ public:
 	}
 };
 
-KAI_END
+FPL_END
 

@@ -1,9 +1,9 @@
 #pragma once
 
-#include <KAI/Language/Common/ProcessCommon.h>
-#include <KAI/Language/Common/Slice.h>
+#include <FPL/ProcessCommon.h>
+#include <FPL/Slice.h>
 
-KAI_BEGIN
+FPL_BEGIN
 
 int IsSpaceChar(int ch);
 
@@ -13,12 +13,12 @@ class LexerBase : public ProcessCommon
 public:
 	typedef std::vector<std::string> Lines;
 
-	LexerBase(const char *, Registry &r);
+	LexerBase(const char *);
 
 	const std::string &GetLine(size_t n) const
 	{
 		if (lines.empty() || n >= lines.size())
-			KAI_THROW_2(OutOfBounds, n, 0);
+			throw;// TODO FPL_THROW_2(OutOfBounds, n, 0);
 		return lines[n];
 	}
 
@@ -53,5 +53,5 @@ protected:
 	Slice Gather(int(*filter)(int ch));
 };
 
-KAI_END
+FPL_END
 

@@ -1,5 +1,12 @@
 #pragma once
 
+#include <string>
+#include <vector>
+
+#define FPL_BEGIN namespace fpl {
+
+#define FPL_END }
+
 // This is the basis for the language-agnostic execution system.
 //
 // There is one Translator<> type, that uses a combination of 
@@ -10,7 +17,7 @@
 //
 // The good news is that you currently have the code itself...
 
-KAI_BEGIN
+FPL_BEGIN
 
 // A Token given the Abstract Syntax Tree node type that it will
 // have to make
@@ -30,4 +37,4 @@ class NodeBase;
 template <class Lexer, class AstEnumStruct>
 class ParserCommon;
 
-KAI_END
+FPL_END

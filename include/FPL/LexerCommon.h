@@ -1,18 +1,18 @@
 #pragma once
 
-#include <KAI/Language/Common/Slice.h>
-#include <KAI/Language/Common/Process.h>
-#include <KAI/Language/Common/LexerBase.h>
+#include <FPL/Slice.h>
+#include <FPL/Process.h>
+#include <FPL/LexerBase.h>
 
 // TODO: ugly to need these in a library header
 #include <sstream>
 #include <stdarg.h>
 
-#ifdef KAI_USE_MONOTONIC_ALLOCATOR
+#ifdef FPL_USE_MONOTONIC_ALLOCATOR
 #	include <boost/monotonic/monotonic.hpp>
 #endif
 
-KAI_BEGIN
+FPL_BEGIN
 
 // Tokenise an input string for later parsing
 template <class EnumType>
@@ -23,7 +23,7 @@ public:
 	typedef typename EnumType::Enum Enum;
 	typedef EnumType TokenEnumType;
 
-#ifdef KAI_USE_MONOTONIC_ALLOCATOR
+#ifdef FPL_USE_MONOTONIC_ALLOCATOR
 	typedef boost::monotonic::vector<Token> Tokens;
 	typedef boost::monotonic::vector<std::string> Lines;
 	typedef boost::monotonic::map<std::string, Token::Type> Keywords;
@@ -208,4 +208,4 @@ public:
 	}
 };
 
-KAI_END
+FPL_END

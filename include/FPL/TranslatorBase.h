@@ -1,8 +1,8 @@
 #pragma once
 
-#include <KAI/Language/Common/TranslatorCommon.h>
+#include <FPL/TranslatorCommon.h>
 
-KAI_BEGIN
+FPL_BEGIN
 
 template <class EParser>
 struct TranslatorBase : TranslatorCommon
@@ -22,7 +22,7 @@ struct TranslatorBase : TranslatorCommon
 	{
 		if (text == 0 || text[0] == 0)
 		{
-			KAI_TRACE_WARN_1("No input");
+			FPL_TRACE_WARN_1("No input");
 			return Object();
 		}
 
@@ -30,42 +30,42 @@ struct TranslatorBase : TranslatorCommon
 		lex->Process();
 		if (lex->GetTokens().empty())
 		{
-			KAI_TRACE_WARN_1("No tokens");
+			FPL_TRACE_WARN_1("No tokens");
 			return Object();
 		}
 
 		if (lex->Failed)
 		{
-			KAI_TRACE_WARN_1(lex->Error);
+			FPL_TRACE_WARN_1(lex->Error);
 			Fail(lex->Error);
 			return Object();
 		}
 
 		if (trace > 0)
-			KAI_TRACE_2("Lexer:\n", lex->Print());
+			FPL_TRACE_2("Lexer:\n", lex->Print());
 
 		auto parse = std::make_shared<Parser>(*_reg);
 		parse->Process(lex, st);
 		if (parse->Failed)
 		{
 			if (trace > 1)
-				KAI_TRACE_2("\n\n\nAST:\n", parse->PrintTree());
+				FPL_TRACE_2("\n\n\nAST:\n", parse->PrintTree());
 
 			Fail(parse->Error);
 			return Object();
 		}
 
 		if (trace > 1)
-			KAI_TRACE_2("\n\n\nAST:\n", parse->PrintTree());
+			FPL_TRACE_2("\n\n\nAST:\n", parse->PrintTree());
 
 		PushNew();
 		TranslateNode(parse->GetRoot());
 
 		if (stack.empty())
-			KAI_THROW_0(EmptyStack);
+			FPL_THROW_0(EmptyStack);
 
 		if (trace > 2)
-			KAI_TRACE_1(stack.back());
+			FPL_TRACE_1(stack.back());
 
 		auto ret = stack.back();
 		if (!ret.template IsType<Continuation>())
@@ -96,6 +96,6 @@ protected:
 	}
 };
 
-KAI_END
+FPL_END
 
 

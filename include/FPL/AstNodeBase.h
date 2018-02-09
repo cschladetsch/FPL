@@ -5,11 +5,10 @@
 #include <string>
 #include <sstream>
 
-// #include <KAI/Core/Config/Base.h>
-#include <KAI/Core/Object.h>
-#include <KAI/Language/Common/AstNodeBase.h>
+// #include <FPL/Config/Base.h>
+#include <FPL/Base.h>
 
-KAI_BEGIN
+FPL_BEGIN
 
 // A common AST Node, given the Tokens to use, and the
 // enumeration type Enum that indicates what type of AST it is
@@ -88,5 +87,5 @@ private:
 	}
 };
 
-KAI_END
+FPL_END
 

@@ -1,8 +1,8 @@
 #pragma once
 
-#include <KAI/Core/Base.h>
+#include <FPL/Base.h>
 
-KAI_BEGIN
+FPL_BEGIN
 
 // Indicates a range of characters in a larger string.
 // Another humble but extremely useful structure.
@@ -26,4 +26,4 @@ struct Slice
 	}
 };
 
-KAI_END
+FPL_END
