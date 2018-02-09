@@ -20,8 +20,8 @@ enum class Structure
 	Class,			// a collection of properties, events, and methods
 };
 
-StringStream &operator<<(StringStream &S, const Structure& T);
-StringStream &operator>>(StringStream &S, Structure &T);
+//StringStream &operator<<(StringStream &S, const Structure& T);
+//StringStream &operator>>(StringStream &S, Structure &T);
 
 FPL_END
 

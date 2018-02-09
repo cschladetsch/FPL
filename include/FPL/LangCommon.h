@@ -1,7 +1,5 @@
 #pragma once
 
-#include <FPL/Registry.h>
-#include <KAI/Executor/Executor.h>
 #include <FPL/Base.h>
 #include <FPL/Process.h>
 #include <FPL/ParserCommon.h>
