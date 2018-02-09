@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClCompile Include="..\..\src\LexerBase.cpp" />
     <ClCompile Include="..\..\src\Process.cpp" />
+    <ClCompile Include="..\..\src\Registry.cpp" />
     <ClCompile Include="..\..\src\Structure.cpp" />
     <ClCompile Include="..\..\src\TokenBase.cpp" />
   </ItemGroup>
@@ -41,6 +42,7 @@
     <ClInclude Include="..\..\include\FPL\TokenBase.h" />
     <ClInclude Include="..\..\include\FPL\TranslatorBase.h" />
     <ClInclude Include="..\..\include\FPL\TranslatorCommon.h" />
+    <ClInclude Include="..\..\include\FPL\Value.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="..\..\include\FPL\Readme.md" />
