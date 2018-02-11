@@ -121,7 +121,6 @@ protected:
 	{
 		if (stack.empty())
 		{
-			//MUST CreateError("Internal Error: Parse stack empty");
 			FPL_THROW_0(EmptyStack);
 		}
 
@@ -231,7 +230,6 @@ protected:
 		if (tok.type != type)
 		{
 			Fail(Lexer::CreateErrorMessage(tok, "Expected %s, have %s", TokenEnumType::ToString(type), TokenEnumType::ToString(tok.type)));
-			//FPL_THROW_1(LogicError, "Unexpected token");
 			return 0;
 		}
 

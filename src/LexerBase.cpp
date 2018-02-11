@@ -87,7 +87,7 @@ bool LexerBase::LexString()
 {
 	int start = offset;
 	Next();
-	while (!Failed && Current() != '"') // "
+	while (!Failed && Current() != '"')
 	{
 		if (Current() == '\\')
 		{
@@ -115,7 +115,7 @@ bool LexerBase::LexString()
 
 	Next();
 
-	// the +1 and -1 to remove the start and end double quote " characters
+	// the +1 and -1 to remove the start and end quote " characters
 	AddStringToken(lineNumber, Slice(start + 1, offset - 1));
 
 	return true;

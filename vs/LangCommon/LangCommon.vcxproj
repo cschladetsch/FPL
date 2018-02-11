@@ -29,8 +29,6 @@
     <ClInclude Include="..\..\include\FPL\AstNodeBase.h" />
     <ClInclude Include="..\..\include\FPL\Base.h" />
     <ClInclude Include="..\..\include\FPL\FPL.hpp" />
-    <ClInclude Include="..\..\include\FPL\LangCommon.h" />
-    <ClInclude Include="..\..\include\FPL\Language.h" />
     <ClInclude Include="..\..\include\FPL\LexerBase.h" />
     <ClInclude Include="..\..\include\FPL\LexerCommon.h" />
     <ClInclude Include="..\..\include\FPL\ParserBase.h" />
