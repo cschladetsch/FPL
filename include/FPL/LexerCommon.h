@@ -65,7 +65,6 @@ protected:
 		return !Failed;
 	}
 
-	// TODO: this shouldn't add to this->tokens
 	Token LexAlpha()
 	{
 		Token tok(Enum::Ident, *this, lineNumber, Gather(isalnum));

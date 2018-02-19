@@ -24,6 +24,8 @@ struct TestTokenEnumType
 		CloseSqaureBracket = 10,
 		OpenBrace = 11,
 		CloseBrace = 12,
+		Struct = 13,
+		Ident = 14,
 	};
 
 	struct Type : TokenBase<TestTokenEnumType>
@@ -47,14 +49,37 @@ struct TestLexer : LexerCommon<TestTokenEnumType>
 	void AddKeyWords() override;
 	bool NextToken() override;
 	void Terminate() override;
+
+	bool LexIdent();
 };
 
 void TestLexer::AddKeyWords()
 {
+	keyWords["struct"] = Enum::Struct;
+	keyWords["true"] = Enum::True;
+	keyWords["false"] = Enum::False;
 }
 
 bool TestLexer::NextToken()
 {
+	char current = Current();
+	if (current == 0)
+		return false;
+
+	if (isalpha(current))
+		return LexIdent();
+
+	if (isdigit(current))
+		return Add(Enum::Int, Gather(isdigit));
+
+	switch (current)
+	{
+	case ';': return Add(Enum::Semi);
+	case '{': return Add(Enum::OpenBrace);
+	}
+
+	LexError("Unrecognised %c");
+
 	return false;
 }
 
@@ -62,6 +87,16 @@ void TestLexer::Terminate()
 {
 }
 
-TEST_CASE("Lexer Builds", "[lexer_builds]") {
-	REQUIRE(1);
+bool TestLexer::LexIdent()
+{
+	auto tok = LexAlpha();
+	tokens.push_back(tok);
+	return true;
+}
+
+TEST_CASE("Lexer Builds", "[lexer_builds]")
+{
+	const char *input = "struct Foo { int n; string f; }";
+	auto lex = TestLexer(input);
+	REQUIRE(!lex.Failed);
 }
