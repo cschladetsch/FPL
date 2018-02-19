@@ -13,7 +13,7 @@ class LexerBase : public ProcessCommon
 public:
 	typedef std::vector<std::string> Lines;
 
-	LexerBase(const char *, Registry &);
+	LexerBase(const char *);
 
 	const std::string &GetLine(size_t n) const
 	{

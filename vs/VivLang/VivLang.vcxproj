@@ -18,44 +18,16 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\src\LexerBase.cpp" />
-    <ClCompile Include="..\..\src\Process.cpp" />
-    <ClCompile Include="..\..\src\Structure.cpp" />
-    <ClCompile Include="..\..\src\TokenBase.cpp" />
-    <ClCompile Include="..\..\src\viv\Lexer.cpp" />
-    <ClCompile Include="..\..\test\TestLexer.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\include\FPL\AstNodeBase.h" />
-    <ClInclude Include="..\..\include\FPL\Base.h" />
-    <ClInclude Include="..\..\include\FPL\FPL.hpp" />
-    <ClInclude Include="..\..\include\FPL\LexerBase.h" />
-    <ClInclude Include="..\..\include\FPL\LexerCommon.h" />
-    <ClInclude Include="..\..\include\FPL\ParserBase.h" />
-    <ClInclude Include="..\..\include\FPL\ParserCommon.h" />
-    <ClInclude Include="..\..\include\FPL\Process.h" />
-    <ClInclude Include="..\..\include\FPL\ProcessCommon.h" />
-    <ClInclude Include="..\..\include\FPL\Slice.h" />
-    <ClInclude Include="..\..\include\FPL\Structure.h" />
-    <ClInclude Include="..\..\include\FPL\TokenBase.h" />
-    <ClInclude Include="..\..\include\FPL\TranslatorBase.h" />
-    <ClInclude Include="..\..\include\FPL\TranslatorCommon.h" />
-    <ClInclude Include="..\..\include\FPL\Value.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="..\..\include\FPL\Readme.md" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{FA206104-F4FE-4D35-BCD8-DD130657BC8A}</ProjectGuid>
+    <ProjectGuid>{602F2E62-A49F-48CB-9DA9-FCE15C71DCDA}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
-    <RootNamespace>LangCommon</RootNamespace>
+    <RootNamespace>VivLang</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
-    <ConfigurationType>Application</ConfigurationType>
+    <ConfigurationType>StaticLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v141</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
@@ -100,7 +72,6 @@
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <LinkIncremental>true</LinkIncremental>
-    <IncludePath>c:\users\christian\src\fpl\ext;C:\Users\christian\src\FPL\include;C:\Users\christian\src\boost_1_66_0;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
@@ -113,14 +84,14 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
-      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <PrecompiledHeader>Use</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>

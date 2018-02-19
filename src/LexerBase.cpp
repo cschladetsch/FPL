@@ -7,8 +7,8 @@ int IsSpaceChar(int ch)
 	return ch == ' ';
 }
 
-LexerBase::LexerBase(const char *in, Registry &r)
-	: ProcessCommon(r), input(in), offset(0), lineNumber(0)
+LexerBase::LexerBase(const char *in)
+	: ProcessCommon(), input(in), offset(0), lineNumber(0)
 {
 }
 

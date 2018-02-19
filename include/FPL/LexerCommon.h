@@ -32,7 +32,7 @@ public:
 	typedef std::map<std::string, Enum> Keywords;
 #endif
 
-	LexerCommon(const char *input, Registry &r) : LexerBase(input, r) { }
+	LexerCommon(const char *input) : LexerBase(input) { }
 
 	bool Process()
 	{
