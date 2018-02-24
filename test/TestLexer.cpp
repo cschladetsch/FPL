@@ -76,6 +76,7 @@ bool TestLexer::NextToken()
 	{
 	case ';': return Add(Enum::Semi);
 	case '{': return Add(Enum::OpenBrace);
+	case '}': return Add(Enum::CloseBrace);
 	}
 
 	LexError("Unrecognised %c");
