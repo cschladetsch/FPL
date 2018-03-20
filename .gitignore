@@ -34,3 +34,5 @@ Debug/
 *.exe
 *.out
 *.app
+
+build/
