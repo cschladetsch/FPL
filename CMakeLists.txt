@@ -17,11 +17,6 @@ add_definitions(-DFPL_DEBUG_TRACE)
 set(ROOT $ENV{ROOT})
 set(FPL_ROOT ${CMAKE_SOURCE_DIR})
 
-set(SOURCE_ROOT ${FPL_ROOT}/src)
-set(TEST_ROOT ${SOURCE_ROOT}/test)
-set(BIN_ROOT ${FPL_ROOT}/bin)
-#set(APP_ROOT ${SOURCE_ROOT}/App)
-
 include_directories(${FPL_ROOT}/include)
 
 set(dir ${FPL_ROOT})
@@ -59,7 +54,7 @@ endmacro()
 
 set(TopLevels src test app)
 foreach(top ${TopLevels})
-    include(${SOURCE_ROOT}/${top}/CMakeLists.txt)
+    include(${FPL_ROOT}/${top}/CMakeLists.txt)
 endforeach()
 
 # TODO
